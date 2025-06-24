@@ -30,12 +30,11 @@ const Navbar = () => {
             </>
           ) : (
             <div className="flex space-x-3">
-              <button className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium">
-                Login
-              </button>
-              <button className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 font-medium">
-                Sign Up
-              </button>
+              <Link to="/login">
+                <button className="px-4 py-2 text-gray-600 hover:text-gray-900 font-medium">
+                  Login
+                </button>
+              </Link>
             </div>
           )}
         </div>
