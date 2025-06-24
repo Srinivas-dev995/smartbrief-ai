@@ -9,7 +9,7 @@ export const editorApi = createApi({
   tagTypes: ["Summaries"],
   endpoints: (builder) => ({
     fetchAllSummaries: builder.query({
-      query: () => "/summary/",
+      query: () => `${import.meta.env.VITE_API_BASE_URL}/api/`,
       providesTags: ["Summaries"],
     }),
     updateSummary: builder.mutation({
