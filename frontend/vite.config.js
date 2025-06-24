@@ -8,18 +8,18 @@ export default defineConfig({
   server: {
     proxy: {
       "/auth/user/": {
-        target: "http://localhost:8080",
+        target: "https://smartbrief-ai.onrender.com",
         changeOrigin: true,
         secure: false,
       },
       "/api/admin/": {
-        target: "http://localhost:8080",
+        target: "https://smartbrief-ai.onrender.com",
         changeOrigin: true,
         secure: false,
       },
 
       "/api/summary/": {
-        target: "http://localhost:8080",
+        target: "https://smartbrief-ai.onrender.com",
         changeOrigin: true,
         secure: false,
       },
