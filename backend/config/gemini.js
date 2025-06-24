@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI('AIzaSyAg2_0e8LnkFmpwkVVnVa_qEFl07xk-VLw');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
 
 export default genAI;

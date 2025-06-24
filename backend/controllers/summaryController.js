@@ -1,7 +1,6 @@
 import { Summary } from "../models/Summary.model.js";
 import { extractTextFromBuffer } from "../utils/textExtractor.js";
 import { deductCredit, checkUserHasCredits } from "../utils/creditUtils.js";
-import openai from "../config/openai.js";
 import { getCachedSummary, setCachedSummary } from "../utils/cacheUtils.js";
 import summarizerQueue from "../queues/summarizerQueue.js";
 
