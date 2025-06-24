@@ -23,7 +23,6 @@ router.post(
   Protect,
   ensureCredits,
   upload.single("file"),
-  summarize
 );
 
 router.post(
