@@ -19,7 +19,7 @@ deactivateInactiveUsers();
 
 app.use(
   cors({
-    origin: process.env.ORIGIN || "http://localhost:5173",
+    origin: process.env.ORIGIN || "https://smartbrief-ai.vercel.app",
     credentials: true,
   })
 );
