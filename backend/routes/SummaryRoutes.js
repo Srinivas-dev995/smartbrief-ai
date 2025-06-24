@@ -5,7 +5,6 @@ import {
   getSummaryById,
   updateSummary,
   deleteSummary,
-  summarize,
   queueSummary,
   getSummaryStatus,
 } from "../controllers/summaryController.js";

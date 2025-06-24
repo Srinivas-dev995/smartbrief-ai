@@ -43,57 +43,6 @@ export const createSummary = async (req, res) => {
   res.json({ summary: "This is a summary", remainingCredits: user.credits });
 };
 
-export const summarize = async (req, res) => {
-  try {
-    const { inputText } = req.body;
-    const user = req.user;
-    let content = inputText;
-
-    if (!content && req.file) {
-      content = await extractTextFromBuffer(req.file);
-    }
-
-    if (!content) {
-      return res.status(400).json({ message: "No input text provided" });
-    }
-
-    const cached = await getCachedSummary(user._id.toString(), content);
-    if (cached) {
-      return res.json({
-        message: "Cached summary returned",
-        summary: cached,
-        fromCache: true,
-        remainingCredits: user.credits,
-      });
-    }
-
-    const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: `Summarize this: ${content}` }],
-    });
-
-    const summaryText = response.choices[0].message.content;
-
-    const summary = await Summary.create({
-      owner: user._id,
-      inputText: content,
-      summaryText,
-      wordCount: content.split(/\s+/).length,
-    });
-
-    await deductCredit(user);
-    await setCachedSummary(user._id.toString(), content, summary);
-
-    res.status(201).json({
-      message: "Summary created",
-      summary,
-      remainingCredits: user.credits,
-    });
-  } catch (err) {
-    console.error("Summarization error:", err);
-    res.status(500).json({ message: "Summarization failed" });
-  }
-};
 
 export const getAllSummaries = getSummaries;
 
