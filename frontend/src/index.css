@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary : oklch(82.8% 0.189 84.429)
+}
+
+@layer base{
+  .primary-color {
+    @apply text-primary
+  }
+}
