@@ -1,15 +1,16 @@
+
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const editorApi = createApi({
   reducerPath: "editorApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/api",
+    baseUrl: `${import.meta.env.VITE_API_BASE_URL}/api`,
     credentials: "include", 
   }),
   tagTypes: ["Summaries"],
   endpoints: (builder) => ({
     fetchAllSummaries: builder.query({
-      query: () => `${import.meta.env.VITE_API_BASE_URL}/api/`,
+      query: () => "/summary/",
       providesTags: ["Summaries"],
     }),
     updateSummary: builder.mutation({
