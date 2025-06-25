@@ -13,6 +13,20 @@ SmartBrief AI is a production-grade SaaS platform that allows users to summarize
 
 ---
 
+## 👥 Test Users by Role
+
+You can log in using these test accounts:
+
+| Email               | Role       | Description                          |
+|---------------------|------------|--------------------------------------|
+| `user1@gmail.com`   | **User**   | Regular user                         |
+| `user5@gmail.com`   | **User**   | Another regular user                 |
+| `user2@gmail.com`   | **Admin**  | Can manage all users and summaries   |
+| `user3@gmail.com`   | **Editor** | Can edit/delete all summaries        |
+| `user4@gmail.com`   | **Reviewer** | Read-only access to all summaries  |
+
+**Password (for all accounts)**: `123456`
+
 ## 🧠 Features
 
 ### ✍️ Content Summarization
